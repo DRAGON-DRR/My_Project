@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Model\Pic_User\1.jpg" />
+    <None Remove="Model\Pic_User\10.jpg" />
+    <None Remove="Model\Pic_User\2.jpg" />
+    <None Remove="Model\Pic_User\3.jpg" />
+    <None Remove="Model\Pic_User\4.jpg" />
+    <None Remove="Model\Pic_User\5.jpg" />
+    <None Remove="Model\Pic_User\6.jpg" />
+    <None Remove="Model\Pic_User\7.jpg" />
+    <None Remove="Model\Pic_User\8.jpg" />
+    <None Remove="Model\Pic_User\9.jpg" />
+    <None Remove="Model\Pic_User\Student.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Model\Pic_User\1.jpg" />
+    <Resource Include="Model\Pic_User\10.jpg" />
+    <Resource Include="Model\Pic_User\2.jpg" />
+    <Resource Include="Model\Pic_User\3.jpg" />
+    <Resource Include="Model\Pic_User\4.jpg" />
+    <Resource Include="Model\Pic_User\5.jpg" />
+    <Resource Include="Model\Pic_User\6.jpg" />
+    <Resource Include="Model\Pic_User\7.jpg" />
+    <Resource Include="Model\Pic_User\8.jpg" />
+    <Resource Include="Model\Pic_User\9.jpg" />
+    <Resource Include="Model\Pic_User\Student.png" />
+  </ItemGroup>
+
+</Project>

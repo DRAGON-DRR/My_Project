@@ -1,0 +1,234 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My_Project"
+        xmlns:ViewModel="clr-namespace:My_Project.ViewModel" x:Class="My_Project.Window_Main"
+        mc:Ignorable="d"
+        Title="Window_Main" WindowStyle="None" Height="530" Width="1000">
+    <Window.Resources>
+        <Style x:Key="NeumorphismButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Foreground" Value="#004D40"/>
+            <Setter Property="Background" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="ButtonInnerBorder" BorderThickness="1" BorderBrush="#d1d1d1" CornerRadius="20" Margin="0,1,2,1">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#f0f0f0" Offset="0"/>
+                                        <GradientStop Color="#d1d1d1" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <Border x:Name="ButtonBorder" BorderThickness="2" BorderBrush="Black" CornerRadius="20">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="White" Offset="0"/>
+                                        <GradientStop Color="#FF58DC52" Offset="0.557"/>
+                                        <GradientStop Color="#FF2B7126" Offset="0.851"/>
+                                        <GradientStop Color="#FF153C10" Offset="1"/>
+
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#66BB6A"/>
+                                <Setter TargetName="ButtonInnerBorder" Property="Background" Value="#A5D6A7"/>
+                                <Setter Property="Foreground" Value="#212121"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseCaptured" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#A5D6A7"/>
+                                <Setter TargetName="ButtonInnerBorder" Property="Background" Value="#A5D6A7"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Margin" Value="2"/>
+                                <Setter TargetName="ButtonInnerBorder" Property="Margin" Value="0"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="minAndClose" TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Black"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Foreground" Value="#212121"/>
+            <Setter Property="Background" Value="#43A047" />
+
+
+
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Pen"/>
+                    <Setter Property="Background" Value="#AED581"/>
+                    <Setter Property="Foreground" Value="#33691E"/>
+
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#C6FF00"/>
+                    <Setter Property="Cursor" Value="AppStarting"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+    </Window.Resources>
+
+
+
+
+
+
+
+
+
+
+
+    <Window.DataContext>
+        <ViewModel:Window_Main_VM/>
+    </Window.DataContext>
+
+
+
+
+
+
+
+
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="964*"/>
+            <ColumnDefinition Width="31"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="3" CornerRadius="0,0,5,5" Margin="0,335,0,0.1"
+            VerticalAlignment="Top"
+            Grid.ColumnSpan="3" Height="195">
+
+
+            <Viewbox HorizontalAlignment="Center" Height="195" Stretch="Fill" VerticalAlignment="Center" Width="1000" >
+
+
+                <Border Height="150" Width="1000">
+
+
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Height="150" Width="1000">
+                            <StackPanel.OpacityMask>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </StackPanel.OpacityMask>
+                            <StackPanel.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF5EB364" Offset="1"/>
+                                </LinearGradientBrush>
+                            </StackPanel.Background>
+                            <Button Content="Add Student" Command="{Binding AddStudentCommand}"  Style="{StaticResource NeumorphismButtonStyle}" Width="170" Height="50" FontSize="16" Margin="150,0,0,0" FontWeight="Bold"  Background="#FF545D6A"/>
+                            <Button Content="Edit Student"  Style="{StaticResource NeumorphismButtonStyle}" Command="{Binding ExecuteEditStudentCommandCommand}" Background="#545d6a" Width="170" Height="50" Margin="100,0,0,0" FontSize="16" FontWeight="Bold"/>
+                            <Button Content="Delete Student"  Style="{StaticResource NeumorphismButtonStyle}" Command="{Binding DeleteCommand}" Background="#545d6a" Width="170" Height="50" Margin="100,0,0,0" FontSize="16" FontWeight="Bold"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Viewbox>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="3" CornerRadius="5,5,0,0" Margin="0,0,0,0.1" Height="335" VerticalAlignment="Top" Grid.ColumnSpan="3" >
+
+            <Border>
+
+                <Border>
+
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel.Background>                            <LinearGradientBrush StartPoint="0,0"                                     EndPoint="1,1">                                <GradientStop Color="#00C853"                                  Offset="0.01"/>                                <GradientStop Color="#69F0AE"                                  Offset="1"/>                            </LinearGradientBrush>                        </StackPanel.Background>
+
+                        <StackPanel Margin=" 150 0 0 0"  HorizontalAlignment="Left" Width="600"  Background="Transparent" Orientation="Horizontal" >
+
+                            <TextBlock Text="First Name" Foreground="#212121"  Style="{StaticResource ListView}" FontSize="16" Width="101" Margin=" 25 0 0 0"/>
+                            <TextBlock Text="Last Name" Foreground="#212121"   Style="{StaticResource ListView}" Margin=" 40 0 0 0" FontSize="16" Width="109"/>
+                            <TextBlock Text="Age" Foreground="#212121"  Style="{StaticResource ListView}" Margin=" 50 0 0 0" FontSize="16"/>
+                            <TextBlock Text="Date Of Birth"  Foreground="#212121"  Style="{StaticResource ListView}" Margin=" 20 0 0 0" FontSize="16" Width="125"/>
+                            <TextBlock Text="GPA" Foreground="#212121"  Style="{StaticResource ListView}" Margin=" 20 0 0 0" FontSize="16" Width="101"/>
+
+                        </StackPanel>
+                        <Border  Margin="0 20 0 0"  Height="254" Width="750" >
+                            <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5">
+
+                                <Border>
+
+                                    <Border>
+
+                                        <ListView x:Name="Listview" Background="Transparent" ItemsSource="{Binding Users, UpdateSourceTrigger=PropertyChanged}"
+                                            SelectedItem="{Binding SelectedUser, UpdateSourceTrigger=PropertyChanged}">
+                                            <ListView.ItemTemplate >
+                                                <DataTemplate>
+                                                    <Border Background="Transparent"  
+                                                        Width="600" Height="35" >
+                                                        <StackPanel Width="600"  Background="Transparent" Orientation="Horizontal" >
+
+                                                            <Image Grid.Column="0" Source="{Binding Image}" Width="44" Height="28" Margin="5" IsEnabled="True"/>
+
+
+                                                            <TextBlock Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin=" 20 0 0 0"/>
+                                                            <TextBlock Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin=" 50 0 0 0"/>
+                                                            <TextBlock Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin=" 80 0 0 0"/>
+                                                            <TextBlock Text="{Binding DateOfBirth, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin=" 25 0 0 0"/>
+                                                            <TextBlock Text="{Binding GPA, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListView}" Margin=" 75 0 0 0"/>
+
+                                                        </StackPanel>
+
+                                                    </Border>
+                                                </DataTemplate>
+
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </Border>
+                        <Grid>
+                            <Button  Content="MINIMIZE"  Style="{StaticResource minAndClose}" Margin="775,-300,42,304" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Minimize_ButtonCommand}"/>
+                            <Button Content="CLOSE"  Style="{StaticResource minAndClose}" Margin="888,-295,-12,310" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding Close_ButtonCommand}"/>
+
+                        </Grid>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Border>
+
+        </Border>
+
+    </Grid>
+
+
+</Window>

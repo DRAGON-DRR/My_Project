@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My_Project"
+        xmlns:ViewModel="clr-namespace:My_Project.ViewModel" x:Class="My_Project.Window_Massege_"
+        mc:Ignorable="d"
+        Title="Window_Massege_" Height="75" Width="200" WindowStyle="None" BorderBrush="#FF374C38" BorderThickness="1,1,1,1" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <ViewModel:Window_Messg_VM/>
+    </Window.DataContext>
+
+    <Grid Width="199"  >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+
+                <GradientStop Color="#FFED952F" Offset="1"/>
+                <GradientStop Color="#FFF1EDA4" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="X" Click="WinClose" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,0,0,0" Height="19" Width="19" Cursor="Pen" BorderBrush="#FF01410B">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF822B00"/>
+                    <GradientStop Color="#FFF3B394" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Topic_M}" VerticalAlignment="Top" FontWeight="Bold" TextDecorations="Underline" FontFamily="Times New Roman" FontSize="12" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Text="{Binding Massege_}" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+
+    </Grid>
+</Window>
